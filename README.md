@@ -26,7 +26,7 @@ NoteEditor(
   children: [
     NoteItem(
       type: NoteItemType.title,
-      url: 'Note title',
+      text: 'Note title',
     ),
     NoteItem(
       type: NoteItemType.text,

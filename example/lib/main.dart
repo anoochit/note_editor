@@ -42,39 +42,39 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: NoteEditor(
         controller: noteEditorController,
-        children: [
-          NoteItem(
-            type: NoteItemType.title,
-            text: 'Note title',
-          ),
-          NoteItem(
-            type: NoteItemType.text,
-            text: 'Note text here',
-          ),
-          NoteItem(
-            type: NoteItemType.checkbox,
-            text: 'Task 1',
-            value: false,
-          ),
-          NoteItem(
-            type: NoteItemType.link,
-            url: 'https://github.com/anoochit',
-          ),
-          NoteItem(
-            type: NoteItemType.image,
-            url:
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/640px-Google_2015_logo.svg.png',
-          ),
-          NoteItem(
-            type: NoteItemType.video,
-            url:
-                'http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_60fps_normal.mp4',
-          ),
-          NoteItem(
-            type: NoteItemType.audio,
-            url: '',
-          ),
-        ],
+        // children: [
+        //   NoteItem(
+        //     type: NoteItemType.title,
+        //     text: 'Note title',
+        //   ),
+        //   NoteItem(
+        //     type: NoteItemType.text,
+        //     text: 'Note text here',
+        //   ),
+        //   NoteItem(
+        //     type: NoteItemType.checkbox,
+        //     text: 'Task 1',
+        //     value: false,
+        //   ),
+        //   NoteItem(
+        //     type: NoteItemType.link,
+        //     url: 'https://github.com/anoochit',
+        //   ),
+        //   NoteItem(
+        //     type: NoteItemType.image,
+        //     url:
+        //         'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/640px-Google_2015_logo.svg.png',
+        //   ),
+        //   NoteItem(
+        //     type: NoteItemType.video,
+        //     url:
+        //         'http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_60fps_normal.mp4',
+        //   ),
+        //   NoteItem(
+        //     type: NoteItemType.audio,
+        //     url: '',
+        //   ),
+        // ],
       ),
     );
   }
