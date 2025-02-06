@@ -31,7 +31,23 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  NoteEditorController noteEditorController = NoteEditorController();
+  NoteEditorController controller = NoteEditorController();
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Add some items
+    controller.addItem(
+      NoteItem(
+        type: NoteItemType.title,
+        text: 'Note Title',
+      ),
+    );
+    controller.addItem(
+      NoteItem(type: NoteItemType.text, text: 'text'),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,41 +56,45 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: NoteEditor(
-        controller: noteEditorController,
-        // children: [
-        //   NoteItem(
-        //     type: NoteItemType.title,
-        //     text: 'Note title',
-        //   ),
-        //   NoteItem(
-        //     type: NoteItemType.text,
-        //     text: 'Note text here',
-        //   ),
-        //   NoteItem(
-        //     type: NoteItemType.checkbox,
-        //     text: 'Task 1',
-        //     value: false,
-        //   ),
-        //   NoteItem(
-        //     type: NoteItemType.link,
-        //     url: 'https://github.com/anoochit',
-        //   ),
-        //   NoteItem(
-        //     type: NoteItemType.image,
-        //     url:
-        //         'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/640px-Google_2015_logo.svg.png',
-        //   ),
-        //   NoteItem(
-        //     type: NoteItemType.video,
-        //     url:
-        //         'http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_60fps_normal.mp4',
-        //   ),
-        //   NoteItem(
-        //     type: NoteItemType.audio,
-        //     url: '',
-        //   ),
-        // ],
+      body: Column(
+        children: [
+          Expanded(
+            child: NoteEditor(
+              controller: controller,
+            ),
+          ),
+          FilledButton.tonal(
+            onPressed: () => controller.addItem(
+              NoteItem(
+                type: NoteItemType.text,
+                text: '',
+              ),
+            ),
+            child: Text('add text'),
+          ),
+          FilledButton.tonal(
+            onPressed: () {
+              if (controller.items.length > 1) {
+                controller.removeItem(controller.items.length - 1);
+              }
+            },
+            child: Text('remove text'),
+          ),
+          FilledButton.tonal(
+            onPressed: () {
+              if (controller.items.length > 1) {
+                final json = controller.exportToJson();
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    content: Text(json),
+                  ),
+                );
+              }
+            },
+            child: Text('export'),
+          )
+        ],
       ),
     );
   }
