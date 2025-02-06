@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Note Demo'),
     );
   }
 }
@@ -63,37 +63,39 @@ class _MyHomePageState extends State<MyHomePage> {
               controller: controller,
             ),
           ),
-          FilledButton.tonal(
-            onPressed: () => controller.addItem(
-              NoteItem(
-                type: NoteItemType.text,
-                text: '',
-              ),
-            ),
-            child: Text('add text'),
-          ),
-          FilledButton.tonal(
-            onPressed: () {
-              if (controller.items.length > 1) {
-                controller.removeItem(controller.items.length - 1);
-              }
-            },
-            child: Text('remove text'),
-          ),
-          FilledButton.tonal(
-            onPressed: () {
-              if (controller.items.length > 1) {
-                final json = controller.exportToJson();
-                showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                    content: Text(json),
+          Row(
+            children: [
+              FilledButton.tonal(
+                onPressed: () => controller.addItem(
+                  NoteItem(
+                    type: NoteItemType.text,
+                    text: '',
                   ),
-                );
-              }
-            },
-            child: Text('export'),
-          )
+                ),
+                child: Text('add'),
+              ),
+              FilledButton.tonal(
+                onPressed: () {
+                  if (controller.items.length > 1) {
+                    controller.removeItem(controller.items.length - 1);
+                  }
+                },
+                child: Text('remove'),
+              ),
+              FilledButton.tonal(
+                onPressed: () {
+                  final json = controller.exportToJson();
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      content: Text(json),
+                    ),
+                  );
+                },
+                child: Text('export'),
+              )
+            ],
+          ),
         ],
       ),
     );
