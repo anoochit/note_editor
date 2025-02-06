@@ -21,17 +21,52 @@ dependencies:
 Add NoteEditor widget to your app.
 
 ```dart
-NoteEditor(
-  controller: noteEditorController,
-  children: [
-    NoteItem(
-      type: NoteItemType.title,
-      text: 'Note title',
-    ),
-    NoteItem(
-      type: NoteItemType.text,
-      text: 'Note text here',
-    )
-  ]
-),
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  NoteEditorController controller = NoteEditorController(); 
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Add some items
+    controller.addItem(
+      NoteItem(
+        type: NoteItemType.title,
+        text: 'Note Title',
+      ),
+    );
+    controller.addItem(
+      NoteItem(
+        type: NoteItemType.text,
+        text: 'Note text',
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text('Editor Demo'),
+      ),
+      body: NoteEditor(
+        controller: controller,
+      ),
+    );
+  }
+}
 ```
+
+## Screenshots
+
+![](/screenshots/screenshot01.png)
