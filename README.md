@@ -11,17 +11,17 @@ A simple note text editor widget for Flutter (like Notion text editor). The widg
 
 ## TODO
 
-[x] Editor widget
-[x] Editor controller
-[x] Add, remove item
-[X] Import note in JSON format
-[X] Export note in JSON format
-[X] Note type title
-[X] Note type text
-[ ] Note type checkbox
-[ ] Note type image
-[ ] Note type video
-[ ] Note type audio
+- [x] Editor widget
+- [x] Editor controller
+- [x] Add, remove item
+- [X] Import note in JSON format
+- [X] Export note in JSON format
+- [X] Note type title
+- [X] Note type text
+- [ ] Note type checkbox
+- [ ] Note type image
+- [ ] Note type video
+- [ ] Note type audio
 
 ## How to use
 
