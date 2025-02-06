@@ -15,13 +15,13 @@ class NoteItemText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 8.0),
       child: TextField(
         controller: controller,
         style: Theme.of(context).textTheme.bodyLarge,
         decoration: InputDecoration(
           border: InputBorder.none,
-          hintText: 'What\'s on your mind?',
+          hintText: 'text',
         ),
         textInputAction: TextInputAction.next,
         maxLines: null,

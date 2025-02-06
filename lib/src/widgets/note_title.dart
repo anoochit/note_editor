@@ -21,7 +21,7 @@ class NoteItemTitle extends StatelessWidget {
         style: Theme.of(context).textTheme.headlineMedium,
         decoration: InputDecoration(
           border: InputBorder.none,
-          hintText: 'Note Name',
+          hintText: 'Title',
         ),
         textInputAction: TextInputAction.next,
         maxLines: null,
