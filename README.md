@@ -6,8 +6,22 @@ A simple note text editor widget for Flutter (like Notion text editor). The widg
 
 * NoteEditor widget show as text form field.
 * Compose note with NoteItem widget.
-* Support many content type eg: text, checkbox, image, video and audio.
+* Support many content type eg: title, text, checkbox, image, video and audio.
 * Export your note in JSON format, so you can export to another type easily.
+
+## TODO
+
+[x] Editor widget
+[x] Editor controller
+[x] Add, remove item
+[X] Import note in JSON format
+[X] Export note in JSON format
+[X] Note type title
+[X] Note type text
+[ ] Note type checkbox
+[ ] Note type image
+[ ] Note type video
+[ ] Note type audio
 
 ## How to use
 
