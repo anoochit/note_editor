@@ -40,6 +40,11 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
 
     // Add some items
+    initNoteItems();
+  }
+
+  void initNoteItems() {
+    // Add some items
     controller.addItem(
       NoteItem(
         type: NoteItemType.title,
