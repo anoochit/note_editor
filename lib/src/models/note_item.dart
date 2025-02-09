@@ -24,4 +24,20 @@ class NoteItem {
   }
 }
 
-enum NoteItemType { title, text, checkbox, link, image, video, audio }
+// note item type
+enum NoteItemType {
+  title,
+  text,
+  checkbox,
+  link,
+  image,
+  video,
+  audio,
+}
+
+// note font style
+enum NoteFontStyle {
+  sans,
+  serif,
+  monospace,
+}

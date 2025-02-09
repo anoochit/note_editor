@@ -68,43 +68,57 @@ class _MyHomePageState extends State<MyHomePage> {
               controller: controller,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                FilledButton.tonal(
-                  onPressed: () => controller.addItem(
-                    NoteItem(
-                      type: NoteItemType.text,
-                      text: '',
-                    ),
-                  ),
-                  child: Text('add'),
-                ),
-                FilledButton.tonal(
-                  onPressed: () {
-                    if (controller.items.length > 1) {
-                      controller.removeItem(controller.items.length - 1);
-                    }
-                  },
-                  child: Text('remove'),
-                ),
-                FilledButton.tonal(
-                  onPressed: () {
-                    final json = controller.exportToJson();
-                    showDialog(
-                      context: context,
-                      builder: (context) => AlertDialog(
-                        content: Text(json),
-                      ),
-                    );
-                  },
-                  child: Text('export'),
-                )
-              ],
+          ToolBox(controller: controller),
+        ],
+      ),
+    );
+  }
+}
+
+class ToolBox extends StatelessWidget {
+  const ToolBox({
+    super.key,
+    required this.controller,
+  });
+
+  final NoteEditorController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          FilledButton.tonal(
+            onPressed: () => controller.addItem(
+              NoteItem(
+                type: NoteItemType.text,
+                text: '',
+              ),
             ),
+            child: Text('add'),
           ),
+          FilledButton.tonal(
+            onPressed: () {
+              if (controller.items.length > 1) {
+                controller.removeItem(controller.items.length - 1);
+              }
+            },
+            child: Text('remove'),
+          ),
+          FilledButton.tonal(
+            onPressed: () {
+              final json = controller.exportToJson();
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  content: Text(json),
+                ),
+              );
+            },
+            child: Text('export'),
+          )
         ],
       ),
     );

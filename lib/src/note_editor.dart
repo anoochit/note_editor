@@ -28,13 +28,6 @@ class _NoteEditorState extends State<NoteEditor> {
     widget.controller._setState = _updateState;
   }
 
-  void _updateState() {
-    setState(() {
-      items = widget.controller.items;
-      controllers = widget.controller.controllers;
-    });
-  }
-
   @override
   void dispose() {
     for (var controller in controllers) {
@@ -45,6 +38,13 @@ class _NoteEditorState extends State<NoteEditor> {
     }
     focusNodes.clear();
     super.dispose();
+  }
+
+  void _updateState() {
+    setState(() {
+      items = widget.controller.items;
+      controllers = widget.controller.controllers;
+    });
   }
 
   @override
@@ -85,7 +85,7 @@ class _NoteEditorState extends State<NoteEditor> {
 class NoteEditorController {
   List<NoteItem> items = [];
   List<TextEditingController> controllers = [];
-  List<FocusNode> _focusNodes = [];
+  final List<FocusNode> _focusNodes = [];
   VoidCallback? _setState;
 
   void addItem(NoteItem noteItem) {
