@@ -1,7 +1,7 @@
 name: note_editor
 description: "A new Flutter package project."
 version: 1.0.0
-homepage:
+homepage: https://github.com/anoochit/note_editor
 
 environment:
   sdk: ^3.6.1
