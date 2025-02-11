@@ -84,6 +84,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ## Screenshots
 
-| ![](/screenshots/screenshot01.png) | ![](/screenshots/screenshot02.png) |
-| ---------------------------------- | ---------------------------------- |
-|                                    |                                    |
+| ![](https://raw.githubusercontent.com/anoochit/note_editor/refs/heads/master/screenshots/screenshot01.png) | ![](https://raw.githubusercontent.com/anoochit/note_editor/refs/heads/master/screenshots/screenshot02.png) |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+|                                                                                                            |                                                                                                            |
