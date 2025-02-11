@@ -81,9 +81,3 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
-
-## Screenshots
-
-| ![](https://raw.githubusercontent.com/anoochit/note_editor/refs/heads/master/screenshots/screenshot01.png) | ![](https://raw.githubusercontent.com/anoochit/note_editor/refs/heads/master/screenshots/screenshot02.png) |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-|                                                                                                            |                                                                                                            |
